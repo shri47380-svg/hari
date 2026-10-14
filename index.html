@@ -3,270 +3,293 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#be1a1a" />
+    <meta name="color-scheme" content="light dark" />
     <title>Shrihari | Student Portfolio</title>
     <meta
       name="description"
       content="Shrihari's student portfolio: learning, exploring technology, and building ideas into digital projects."
     />
+    <meta property="og:type" content="website" />
     <meta property="og:title" content="Shrihari | Student Portfolio" />
     <meta
       property="og:description"
       content="Learning, exploring technology, and building ideas into digital projects."
     />
-    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://shri47380-svg.github.io/hari/" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&f[]=satoshi@400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      try {
+        var saved = localStorage.getItem("theme");
+        var dark = saved ? saved === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", dark);
+        if (!sessionStorage.getItem("intro-seen") && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.documentElement.classList.add("intro");
+          setTimeout(function () {
+            var c = document.getElementById("intro");
+            if (!c || !c.classList.contains("is-live")) document.documentElement.classList.remove("intro");
+          }, 5000);
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
+    <div id="intro" aria-hidden="true"><div class="intro-inner"><div class="intro-name">Shrihari</div><div class="intro-bar"><span></span></div></div></div>
+
     <header class="site-header">
       <div class="container header-inner">
         <a href="#top" class="brand">
-          <span class="brand-mark" aria-hidden="true"></span>
-          Shrihari<span class="dot">.</span>
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          Shrihari
         </a>
-        <nav aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#build-log">Build Log</a>
           <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
+          <a href="#tech-stack">Tech Stack</a>
+          <a href="#journey">Journey</a>
           <a href="#contact">Contact</a>
         </nav>
+        <div class="header-actions">
+          <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+            <span id="theme-icon" aria-hidden="true">☾</span>
+          </button>
+        </div>
       </div>
     </header>
 
     <main id="top">
       <section class="hero">
-        <div id="hero-canvas" aria-hidden="true"></div>
         <div class="container hero-inner">
           <div class="hero-copy" data-reveal>
-            <div class="eyebrow">College student • Curious learner • Aspiring developer</div>
-            <h1>Learning today. Building for tomorrow.</h1>
-            <p>
+            <div class="eyebrow">College student · Open to opportunities</div>
+            <h1>
+              Learning today. Building for <span class="chip">tomorrow.</span>
+            </h1>
+            <p class="summary">
               I’m Shrihari, a college student exploring technology and turning what I learn into
               practical projects. I’m excited to keep growing, take on new challenges, and connect
               with people who love making things.
             </p>
             <div class="btn-row">
-              <a class="btn primary" href="#projects">View my work</a>
-              <a class="btn secondary" href="#contact">Let’s connect</a>
+              <a class="btn cream" href="#projects">View my work →</a>
+              <a class="btn ghost" href="#contact">Let’s connect</a>
             </div>
             <div class="stat-row" aria-label="Portfolio highlights">
               <div class="stat">
-                <strong>Curious</strong>
-                <span class="muted">Always learning</span>
+                <div class="value">2</div>
+                <div class="label">Live projects</div>
               </div>
               <div class="stat">
-                <strong>Hands-on</strong>
-                <span class="muted">Learning by doing</span>
+                <div class="value">ML + Web</div>
+                <div class="label">Focus areas</div>
               </div>
               <div class="stat">
-                <strong>Open</strong>
-                <span class="muted">To new opportunities</span>
+                <div class="value">Open</div>
+                <div class="label">To opportunities</div>
               </div>
             </div>
           </div>
 
-          <aside class="hero-card" data-reveal aria-label="Profile summary">
-            <div class="status-row">
-              <span class="status-dot" aria-hidden="true"></span>
-              Available to learn &amp; collaborate
+          <aside class="portrait" data-reveal aria-label="Profile">
+            <div class="portrait-inner pixel-corners">
+              <div class="portrait-grid" aria-hidden="true">
+                <i></i><i class="on"></i><i></i><i></i><i class="on"></i><i></i>
+                <i class="on"></i><i></i><i></i><i class="on"></i><i></i><i></i>
+                <i></i><i></i><i class="on"></i><i></i><i></i><i class="on"></i>
+                <i class="on"></i><i></i><i></i><i></i><i class="on"></i><i></i>
+                <i></i><i class="on"></i><i></i><i class="on"></i><i></i><i></i>
+                <i></i><i></i><i class="on"></i><i></i><i></i><i class="on"></i>
+                <i class="on"></i><i></i><i></i><i class="on"></i><i></i><i></i>
+                <i></i><i class="on"></i><i></i><i></i><i class="on"></i><i></i>
+              </div>
+              <div class="monogram">S</div>
             </div>
-            <h3>Shrihari</h3>
-            <p>College student building a strong foundation in technology, one project at a time.</p>
-            <ul class="mini-list">
-              <li>Machine learning &amp; web projects</li>
-              <li>Hands-on, iterative learning</li>
-              <li>Open to internships &amp; teamwork</li>
-            </ul>
+            <div class="pixel-strip" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
           </aside>
         </div>
-        <div class="scroll-hint" aria-hidden="true">
-          Scroll
-          <span></span>
-        </div>
       </section>
 
-      <section id="about" class="section">
+      <section id="build-log" class="section">
         <div class="container">
-          <div class="section-header" data-reveal>
-            <div class="eyebrow">About</div>
-            <h2>A student building skills one idea at a time.</h2>
+          <div class="section-head" data-reveal>
+            <div class="eyebrow">Build Log</div>
+            <h2>What I’m working on right now.</h2>
+            <p>Small notes on what I’m learning, building, and exploring at the moment.</p>
           </div>
 
-          <div class="card-grid">
-            <article class="info-card" data-reveal data-tilt>
-              <div class="card-inner">
-                <h3>Learning by doing</h3>
-                <p>
-                  I enjoy exploring new topics, experimenting with ideas, and learning from the
-                  process of making something useful.
+          <div data-reveal>
+            <div class="log-item">
+              <div class="log-date">Now</div>
+              <div>
+                <h3>Foundations in technology</h3>
+                <p style="color: var(--text-soft)">
+                  Building a strong foundation through my college studies and exploring the subjects
+                  that interest me most.
                 </p>
               </div>
-            </article>
-
-            <article class="info-card" data-reveal data-tilt>
-              <div class="card-inner">
-                <h3>Curious by nature</h3>
-                <p>
-                  College gives me room to ask questions, strengthen my foundations, and discover the
-                  areas of technology I want to explore further.
+            </div>
+            <div class="log-item">
+              <div class="log-date">Learning</div>
+              <div>
+                <h3>Machine learning &amp; web development</h3>
+                <p style="color: var(--text-soft)">
+                  Applying new ideas in small, practical projects and learning from each iteration.
                 </p>
               </div>
-            </article>
-
-            <article class="info-card" data-reveal data-tilt>
-              <div class="card-inner">
-                <h3>Ready to collaborate</h3>
-                <p>
-                  I’m glad to share ideas, learn with others, and contribute a thoughtful, dependable
-                  approach to a team.
+            </div>
+            <div class="log-item">
+              <div class="log-date">Next</div>
+              <div>
+                <h3>Open to internships &amp; collaboration</h3>
+                <p style="color: var(--text-soft)">
+                  Looking forward to opportunities where I can contribute while continuing to learn.
                 </p>
               </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" class="section">
-        <div class="container">
-          <div class="section-header" data-reveal>
-            <div class="eyebrow">Skills</div>
-            <h2>Areas I’m exploring and developing.</h2>
-          </div>
-
-          <div class="card-grid">
-            <article class="info-card" data-reveal data-tilt>
-              <div class="card-inner">
-                <h3>Technology</h3>
-                <div class="skill-pills">
-                  <span>HTML5</span>
-                  <span>CSS3</span>
-                  <span>JavaScript</span>
-                  <span>Web development</span>
-                  <span>Programming fundamentals</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="info-card" data-reveal data-tilt>
-              <div class="card-inner">
-                <h3>Problem solving</h3>
-                <div class="skill-pills">
-                  <span>Breaking down problems</span>
-                  <span>Research</span>
-                  <span>Creative thinking</span>
-                  <span>Learning independently</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="info-card" data-reveal data-tilt>
-              <div class="card-inner">
-                <h3>Working with others</h3>
-                <div class="skill-pills">
-                  <span>Communication</span>
-                  <span>Teamwork</span>
-                  <span>Organization</span>
-                  <span>Adaptability</span>
-                </div>
-              </div>
-            </article>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="projects" class="section">
         <div class="container">
-          <div class="section-header" data-reveal>
+          <div class="section-head" data-reveal>
             <div class="eyebrow">Projects</div>
-            <h2>Projects I’ve built.</h2>
+            <h2>Things I’ve built.</h2>
           </div>
 
           <div class="project-grid">
-            <article class="project-card" data-reveal data-tilt>
-              <div class="project-visual" aria-hidden="true"></div>
-              <h3>CIFAR-10 Image Classifier</h3>
-              <p>
-                An image classification project using the CIFAR-10 dataset, available as a live
-                Streamlit app.
-              </p>
-              <div class="project-tags">
-                <span>Machine learning</span>
-                <span>Image classification</span>
-                <span>Streamlit</span>
+            <article class="project" data-reveal>
+              <div class="project-visual" aria-hidden="true">
+                <div class="pv-grid"></div>
+                <div class="pv-tile"></div>
+                <div class="pv-tile small"></div>
               </div>
-              <div class="project-actions">
-                <a
-                  class="btn secondary small"
-                  href="https://cifar10-image-classifier1.streamlit.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >View live project</a
-                >
-                <a
-                  class="btn secondary small"
-                  href="https://github.com/shri47380-svg/cifar10-image-classifier"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >View source on GitHub</a
-                >
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="project-cat">Machine Learning</span>
+                  <span class="status live">Live</span>
+                </div>
+                <h3>CIFAR-10 Image Classifier</h3>
+                <p class="tagline">
+                  An image classification project using the CIFAR-10 dataset, available as a live
+                  Streamlit app.
+                </p>
+                <div class="stack">
+                  <span>Python</span>
+                  <span>Machine learning</span>
+                  <span>Streamlit</span>
+                </div>
+                <div class="project-links">
+                  <a class="btn sm" href="https://cifar10-image-classifier1.streamlit.app/" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+                  <a class="btn sm ghost" href="https://github.com/shri47380-svg/cifar10-image-classifier" target="_blank" rel="noopener noreferrer">Source ↗</a>
+                </div>
               </div>
             </article>
 
-            <article class="project-card" data-reveal data-tilt>
-              <div class="project-visual" aria-hidden="true"></div>
-              <h3>Vaikkal</h3>
-              <p>Visit the live Vaikkal project.</p>
-              <div class="project-tags">
-                <span>Live project</span>
+            <article class="project" data-reveal>
+              <div class="project-visual" aria-hidden="true">
+                <div class="pv-grid"></div>
+                <div class="pv-tile"></div>
+                <div class="pv-tile small"></div>
               </div>
-              <div class="project-actions">
-                <a
-                  class="btn secondary small"
-                  href="https://vaikkal.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >View live project</a
-                >
+              <div class="project-body">
+                <div class="project-meta">
+                  <span class="project-cat">Web</span>
+                  <span class="status live">Live</span>
+                </div>
+                <h3>Vaikkal</h3>
+                <p class="tagline">A live web project hosted on Vercel.</p>
+                <div class="stack">
+                  <span>Web</span>
+                  <span>Vercel</span>
+                </div>
+                <div class="project-links">
+                  <a class="btn sm" href="https://vaikkal.vercel.app/" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+                </div>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="experience" class="section">
+      <section id="tech-stack" class="section">
         <div class="container">
-          <div class="section-header" data-reveal>
-            <div class="eyebrow">Student journey</div>
+          <div class="section-head" data-reveal>
+            <div class="eyebrow">Tech Stack</div>
+            <h2>Tools and skills I’m exploring.</h2>
+          </div>
+
+          <div class="stack-cols">
+            <div class="col" data-reveal>
+              <h3>Technology</h3>
+              <div class="chips">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Web development</span>
+                <span>Python</span>
+                <span>Programming fundamentals</span>
+              </div>
+            </div>
+            <div class="col" data-reveal>
+              <h3>Problem solving</h3>
+              <div class="chips">
+                <span>Breaking down problems</span>
+                <span>Research</span>
+                <span>Creative thinking</span>
+                <span>Learning independently</span>
+              </div>
+            </div>
+            <div class="col" data-reveal>
+              <h3>Working with others</h3>
+              <div class="chips">
+                <span>Communication</span>
+                <span>Teamwork</span>
+                <span>Organization</span>
+                <span>Adaptability</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="journey" class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div class="eyebrow">Journey</div>
             <h2>Growing through study, curiosity, and practice.</h2>
           </div>
 
           <div class="timeline">
-            <article class="timeline-item" data-reveal>
-              <div class="timeline-meta">Right now</div>
+            <article class="tl-item" data-reveal>
+              <div class="tl-when">Right now</div>
               <h3>College student</h3>
               <p>
                 Building a strong foundation through my college studies and exploring the subjects
                 that interest me most.
               </p>
             </article>
-
-            <article class="timeline-item" data-reveal>
-              <div class="timeline-meta">Outside the classroom</div>
+            <article class="tl-item" data-reveal>
+              <div class="tl-when">Outside the classroom</div>
               <h3>Exploring through projects</h3>
-              <p>
-                Applying new ideas in small, practical projects and learning from each iteration.
-              </p>
+              <p>Applying new ideas in small, practical projects and learning from each iteration.</p>
             </article>
-
-            <article class="timeline-item" data-reveal>
-              <div class="timeline-meta">Next step</div>
+            <article class="tl-item" data-reveal>
+              <div class="tl-when">Next step</div>
               <h3>Open to opportunities</h3>
               <p>
                 Looking forward to internships, campus activities, and collaborations where I can
@@ -279,52 +302,37 @@
 
       <section id="contact" class="section">
         <div class="container">
-          <div class="section-header" data-reveal>
+          <div class="section-head" data-reveal>
             <div class="eyebrow">Contact</div>
             <h2>Let’s build something memorable.</h2>
           </div>
 
           <div class="contact-grid">
-            <article class="contact-card" data-reveal data-tilt>
-              <div class="card-inner">
-                <h3>Let’s connect</h3>
-                <p>
-                  I’m happy to connect with fellow students, mentors, and teams working on interesting
-                  ideas. Reach out by email or find me on LinkedIn and GitHub.
-                </p>
-                <div class="btn-row">
-                  <a class="btn primary small" href="mailto:shri47380@gmail.com">Email me</a>
-                </div>
+            <article class="card hard" data-reveal>
+              <h3>Let’s connect</h3>
+              <p>
+                I’m happy to connect with fellow students, mentors, and teams working on interesting
+                ideas. Reach out by email or find me on LinkedIn and GitHub.
+              </p>
+              <div class="btn-row" style="display: flex; gap: 1rem; margin-top: 1.4rem; flex-wrap: wrap">
+                <a class="btn" href="mailto:shri47380@gmail.com">Email me →</a>
+                <a class="btn ghost" href="https://github.com/shri47380-svg" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
               </div>
             </article>
 
-            <article class="contact-card" data-reveal data-tilt>
-              <div class="card-inner">
-                <h3>Connect</h3>
-                <ul class="contact-list">
-                  <li>
-                    <span>Email</span><a href="mailto:shri47380@gmail.com">shri47380@gmail.com</a>
-                  </li>
-                  <li>
-                    <span>LinkedIn</span>
-                    <a
-                      href="https://www.linkedin.com/in/shri-hari-c-b9612a381?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Shrihari’s LinkedIn</a
-                    >
-                  </li>
-                  <li>
-                    <span>GitHub</span>
-                    <a
-                      href="https://github.com/shri47380-svg"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >github.com/shri47380-svg</a
-                    >
-                  </li>
-                </ul>
-              </div>
+            <article class="card hard" data-reveal>
+              <h3>Connect</h3>
+              <ul class="contact-list">
+                <li><span>Email</span><a href="mailto:shri47380@gmail.com">shri47380@gmail.com</a></li>
+                <li>
+                  <span>LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/shri-hari-c-b9612a381?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" target="_blank" rel="noopener noreferrer">Shrihari’s LinkedIn</a>
+                </li>
+                <li>
+                  <span>GitHub</span>
+                  <a href="https://github.com/shri47380-svg" target="_blank" rel="noopener noreferrer">github.com/shri47380-svg</a>
+                </li>
+              </ul>
             </article>
           </div>
         </div>
@@ -334,18 +342,10 @@
     <footer class="footer">
       <div class="container footer-inner">
         <span>© <span id="year"></span> Shrihari. All rights reserved.</span>
-        <span>Made with curiosity and a student mindset.</span>
+        <span>Made with curiosity <span class="cursor" aria-hidden="true"></span></span>
       </div>
     </footer>
 
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
-        }
-      }
-    </script>
-    <script type="module" src="js/scene.js"></script>
     <script src="js/main.js" defer></script>
   </body>
 </html>
