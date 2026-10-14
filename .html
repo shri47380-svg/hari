@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shrihari | Student Portfolio</title>
+    <meta
+      name="description"
+      content="Shrihari's student portfolio: learning, exploring technology, and building ideas into digital projects."
+    />
+    <style>
+      :root {
+        --bg: #07111f;
+        --bg-soft: #0d1b2a;
+        --surface: rgba(12, 22, 35, 0.8);
+        --surface-strong: #101f30;
+        --primary: #7c9cff;
+        --primary-strong: #4f6df5;
+        --accent: #7ef0d4;
+        --text: #e6eefb;
+        --muted: #a3b5d3;
+        --line: rgba(255, 255, 255, 0.12);
+        --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(124, 156, 255, 0.2), transparent 30%),
+          radial-gradient(circle at bottom right, rgba(126, 240, 212, 0.16), transparent 32%),
+          var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1100px, calc(100% - 2rem));
+        margin: 0 auto;
+      }
+
+      .section {
+        padding: 6rem 0;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 1rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      h1, h2, h3 {
+        margin: 0 0 1rem;
+        line-height: 1.1;
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 6vw, 5rem);
+        letter-spacing: -0.06em;
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        letter-spacing: -0.04em;
+      }
+
+      p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(12px);
+        background: rgba(7, 17, 31, 0.65);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 76px;
+        gap: 1.5rem;
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        font-size: 1.2rem;
+      }
+
+      .brand span {
+        color: var(--accent);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 1.4rem;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: var(--muted);
+        transition: color 0.2s ease;
+      }
+
+      nav a:hover {
+        color: var(--text);
+      }
+
+      .btn-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 0.92rem 1.5rem;
+        font-weight: 700;
+        border: 1px solid transparent;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn.primary {
+        background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+        box-shadow: 0 12px 28px rgba(79, 109, 245, 0.35);
+      }
+
+      .btn.secondary {
+        border-color: var(--line);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .hero {
+        padding: 5rem 0 4rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      .hero-copy > p {
+        max-width: 620px;
+        font-size: 1.1rem;
+      }
+
+      .stat-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .stat {
+        min-width: 120px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: clamp(1.4rem, 2vw, 2rem);
+        color: var(--text);
+      }
+
+      .hero-card {
+        background: linear-gradient(180deg, rgba(18, 31, 48, 0.9), rgba(10, 20, 30, 0.9));
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        padding: 1.25rem;
+        box-shadow: var(--shadow);
+      }
+
+      .profile-card {
+        background: linear-gradient(135deg, rgba(124, 156, 255, 0.18), rgba(126, 240, 212, 0.1));
+        border: 1px solid rgba(124, 156, 255, 0.28);
+        border-radius: 22px;
+        padding: 1.25rem;
+      }
+
+      .avatar {
+        height: 420px;
+        border-radius: 18px;
+        background:
+          linear-gradient(160deg, rgba(124, 156, 255, 0.85), rgba(16, 31, 48, 0.15)),
+          linear-gradient(135deg, #d8ebff, #8ab1ff 45%, #1f2d46);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .avatar::before,
+      .avatar::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      .avatar::before {
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.18);
+        top: 45px;
+        left: 120px;
+      }
+
+      .avatar::after {
+        width: 170px;
+        height: 170px;
+        background: rgba(12, 22, 35, 0.28);
+        bottom: -30px;
+        right: 80px;
+      }
+
+      .mini-badge {
+        display: inline-flex;
+        padding: 0.6rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.02);
+        margin-top: 1rem;
+        color: var(--text);
+      }
+
+      .section-header {
+        max-width: 680px;
+        margin-bottom: 2.5rem;
+      }
+
+      .card-grid,
+      .project-grid,
+      .contact-grid {
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .info-card,
+      .project-card,
+      .timeline-item,
+      .contact-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 1.5rem;
+        box-shadow: var(--shadow);
+      }
+
+      .info-card h3,
+      .project-card h3,
+      .timeline-item h3,
+      .contact-card h3 {
+        font-size: 1.25rem;
+      }
+
+      .skill-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1rem;
+      }
+
+      .skill-pills span {
+        border-radius: 999px;
+        border: 1px solid rgba(124, 156, 255, 0.28);
+        background: rgba(124, 156, 255, 0.08);
+        color: var(--text);
+        padding: 0.6rem 0.85rem;
+        font-size: 0.86rem;
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .project-card {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .project-visual {
+        height: 180px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(124, 156, 255, 0.2), rgba(126, 240, 212, 0.14));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-visual::before {
+        content: "";
+        position: absolute;
+        inset: 16px;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(7, 17, 31, 0.4);
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .project-tags span {
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.78rem;
+        padding: 0.42rem 0.6rem;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 2.2rem;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: 0.9rem;
+        top: 1.8rem;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 6px rgba(126, 240, 212, 0.12);
+      }
+
+      .timeline-item::after {
+        content: "";
+        position: absolute;
+        left: 1.35rem;
+        top: 2.1rem;
+        bottom: -1.25rem;
+        width: 2px;
+        background: rgba(126, 240, 212, 0.2);
+      }
+
+      .timeline-item:last-child::after {
+        display: none;
+      }
+
+      .timeline-meta {
+        display: inline-flex;
+        margin-bottom: 0.7rem;
+        font-weight: 700;
+        color: var(--accent);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: stretch;
+      }
+
+      .contact-card {
+        min-height: 100%;
+      }
+
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.25rem 0 0;
+        display: grid;
+        gap: 0.9rem;
+      }
+
+      .contact-list li {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 0.8rem;
+      }
+
+      .contact-list li span:first-child {
+        color: var(--muted);
+      }
+
+      .contact-list li a {
+        color: var(--text);
+      }
+
+      .footer {
+        padding: 2rem 0 3rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .card-grid,
+        .project-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          flex-direction: column;
+          justify-content: center;
+          padding: 1rem 0;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .section {
+          padding: 4.5rem 0;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .btn-row {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#top" class="brand">Shrihari<span>.</span></a>
+        <nav aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">College student • Curious learner • Aspiring developer</div>
+            <h1>Learning today. Building for tomorrow.</h1>
+            <p>
+              I’m Shrihari, a college student exploring technology and turning what I learn into
+              practical projects. I’m excited to keep growing, take on new challenges, and connect
+              with people who love making things.
+            </p>
+            <div class="btn-row">
+              <a class="btn primary" href="#projects">View my work</a>
+              <a class="btn secondary" href="#contact">Let’s connect</a>
+            </div>
+            <div class="stat-row" aria-label="Portfolio highlights">
+              <div class="stat">
+                <strong>Curious</strong>
+                <span class="muted">Always learning</span>
+              </div>
+              <div class="stat">
+                <strong>Hands-on</strong>
+                <span class="muted">Learning by doing</span>
+              </div>
+              <div class="stat">
+                <strong>Open</strong>
+                <span class="muted">To new opportunities</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="profile-card">
+              <div class="avatar" aria-label="Profile illustration"></div>
+              <div class="mini-badge">College student • Open to learning and collaboration</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">About</div>
+            <h2>A student building skills one idea at a time.</h2>
+          </div>
+
+          <div class="card-grid">
+            <article class="info-card">
+              <h3>Learning by doing</h3>
+              <p>
+                I enjoy exploring new topics, experimenting with ideas, and learning from the process
+                of making something useful.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <h3>Curious by nature</h3>
+              <p>
+                College gives me room to ask questions, strengthen my foundations, and discover the
+                areas of technology I want to explore further.
+              </p>
+            </article>
+
+            <article class="info-card">
+              <h3>Ready to collaborate</h3>
+              <p>
+                I’m glad to share ideas, learn with others, and contribute a thoughtful, dependable
+                approach to a team.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Skills</div>
+            <h2>Areas I’m exploring and developing.</h2>
+          </div>
+
+          <div class="card-grid">
+            <article class="info-card">
+              <h3>Technology</h3>
+              <div class="skill-pills">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Web development</span>
+                <span>Programming fundamentals</span>
+              </div>
+            </article>
+
+            <article class="info-card">
+              <h3>Problem solving</h3>
+              <div class="skill-pills">
+                <span>Breaking down problems</span>
+                <span>Research</span>
+                <span>Creative thinking</span>
+                <span>Learning independently</span>
+              </div>
+            </article>
+
+            <article class="info-card">
+              <h3>Working with others</h3>
+              <div class="skill-pills">
+                <span>Communication</span>
+                <span>Teamwork</span>
+                <span>Organization</span>
+                <span>Adaptability</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Projects</div>
+            <h2>Projects I’ve built.</h2>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-visual" aria-hidden="true"></div>
+              <h3>CIFAR-10 Image Classifier</h3>
+              <p>
+                An image classification project using the CIFAR-10 dataset, available as a live
+                Streamlit app.
+              </p>
+              <div class="project-tags">
+                <span>Machine learning</span>
+                <span>Image classification</span>
+                <span>Streamlit</span>
+              </div>
+              <a class="btn secondary" href="https://cifar10-image-classifier1.streamlit.app/" target="_blank" rel="noopener noreferrer">View live project</a>
+              <a class="btn secondary" href="https://github.com/shri47380-svg/cifar10-image-classifier" target="_blank" rel="noopener noreferrer">View source on GitHub</a>
+            </article>
+
+            <article class="project-card">
+              <div class="project-visual" aria-hidden="true"></div>
+              <h3>Vaikkal</h3>
+              <p>
+                Visit the live Vaikkal project.
+              </p>
+              <div class="project-tags">
+                <span>Live project</span>
+              </div>
+              <a class="btn secondary" href="https://vaikkal.vercel.app/" target="_blank" rel="noopener noreferrer">View live project</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Student journey</div>
+            <h2>Growing through study, curiosity, and practice.</h2>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-meta">Right now</div>
+              <h3>College student</h3>
+              <p>
+                Building a strong foundation through my college studies and exploring the subjects
+                that interest me most.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-meta">Outside the classroom</div>
+              <h3>Exploring through projects</h3>
+              <p>
+                Applying new ideas in small, practical projects and learning from each iteration.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-meta">Next step</div>
+              <h3>Open to opportunities</h3>
+              <p>
+                Looking forward to internships, campus activities, and collaborations where I can
+                contribute while continuing to learn.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Contact</div>
+            <h2>Let’s build something memorable.</h2>
+          </div>
+
+          <div class="contact-grid">
+            <article class="contact-card">
+              <h3>Let’s connect</h3>
+              <p>
+                I’m happy to connect with fellow students, mentors, and teams working on interesting
+                ideas. Reach out by email or find me on LinkedIn and GitHub.
+              </p>
+            </article>
+
+            <article class="contact-card">
+              <h3>Connect</h3>
+              <ul class="contact-list">
+                <li><span>Email</span><a href="mailto:shri47380@gmail.com">shri47380@gmail.com</a></li>
+                <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/shri-hari-c-b9612a381?utm_source=share&amp;utm_campaign=share_via&amp;utm_content=profile&amp;utm_medium=android_app" target="_blank" rel="noopener noreferrer">Shrihari’s LinkedIn</a></li>
+                <li><span>GitHub</span><a href="https://github.com/shri47380-svg" target="_blank" rel="noopener noreferrer">github.com/shri47380-svg</a></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>© <span id="year"></span> Shrihari. All rights reserved.</span>
+        <span>Made with curiosity and a student mindset.</span>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
